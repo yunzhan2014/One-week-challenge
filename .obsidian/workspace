@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "0e683c44972eadb0",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed82d8866f90e67b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Tools/gitsNotes.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "496f0863b7d1018a",
+    "type": "split",
+    "children": [
+      {
+        "id": "226c41719995b1dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bd262f275c548ae1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "aa10be3c2594cfed",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2130d22a110890e2",
+    "type": "split",
+    "children": [
+      {
+        "id": "a872da460bd5d4fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b989ec4c8d9ac52c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tools/gitsNotes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ed82d8866f90e67b",
+  "lastOpenFiles": [
+    "Tools/gitsNotes.md",
+    "Tools/fidderNotes.md",
+    "cppNotes.md",
+    "Tools/vscodeNotes.md",
+    "Tools/vimNotes.md",
+    "README.md",
+    "Python/pythonNotes.md",
+    "Python/condaNotes.md",
+    "httpNotes.md"
+  ]
+}

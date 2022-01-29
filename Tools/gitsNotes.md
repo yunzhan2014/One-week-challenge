@@ -29,6 +29,5 @@ git remote orgin --delete master          #删除远程仓库的**master**分支
 
 8. 查看确认删除后，删除本地master分支
 > git brance -a   
-git brance -d master
+> git brance -d master
 
-以上，就完成了所有操作

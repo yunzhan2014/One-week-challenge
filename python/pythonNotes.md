@@ -15,9 +15,13 @@
 2. conda 整体创建
 3. virtualenv
 
-### 位置参数和关键值参数，以及*和**参数的用法
+## 函数
 
-### 正反斜杠的问题
+
+
+### 位置参数和关键值参数，以及*和 |**参数的用法
+
+#### 正反斜杠的问题
 
 > 路径上的应用，首先告诉大家，用于路径上，python是不区分正("/")反("\")斜杠的。
 但是呢，反斜杠本身属于转义符，如果"\"后正好有个n，那就会识别为换行符。
@@ -33,6 +37,8 @@ r"E:\Python\Lib\site_packages" ，r告诉字符串，这个里面的反斜杠不
 r"\\"，告诉python，第一次不转义了，直接进行第二次转义。
 
 [在Python的string前面加上‘r’， 是为了告诉编译器这个string是个raw string，不要转意backslash '\ ' 。 例如，\n 在raw string中，是两个字符，\和n， 而不会转意为换行符。由于正则表达式和 \ 会有冲突，因此，当一个字符串使用了正则表达式后，最好在前面加上'r'。](https://blog.csdn.net/orzlzro/article/details/6645909)
+
+
 > [参考1](https://blog.csdn.net/qq_38161040/article/details/88387537)  
 > [参考2](https://www.polarxiong.com/archives/Python-os-path-join-%E4%BA%A7%E7%94%9F%E7%9A%84%E6%96%9C%E6%9D%A0%E5%9C%A8Windows%E5%92%8CLinux%E4%B8%8B%E7%9A%84%E4%B8%8D%E5%90%8C%E8%A1%A8%E7%8E%B0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html)  
 
@@ -40,3 +46,72 @@ r"\\"，告诉python，第一次不转义了，直接进行第二次转义。
 
 [Leetcode 283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
 
+### 变量的赋值
+采用传递对象引用的方式：
+
+    1. List, dict是采用传址的方式；
+	2. 数字、字符串、元组是采用传址的方式
+
+
+
+##  Python 内部管理机制
+
+### 浅拷贝和深拷贝
+
+`浅拷贝`:浅拷贝中的元素,是对原对象中子对象的引用.此时如果原对象中某一子对象是可变的,改变后会影响拷贝后的对象,存在副作用.一不小心就会触发很大的问题.
+
+`深拷贝`:深拷贝则会递归的拷贝原对象中的每一个子对象,拷贝之后的对象与原对象没有关系.
+
+浅拷贝通常只复制对象本身，而深拷贝不仅会复制对象，还会递归的复制对象所关联的对象。深拷贝可能会遇到两个问题：一是一个对象如果直接或间接的引用了自身，会导致无休止的递归拷贝；二是深拷贝可能对原本设计为多个对象共享的数据也进行拷贝。
+
+列表的切片操作`[:]`相当于实现了列表对象的浅拷贝，而字典的`copy`方法可以实现字典对象的浅拷贝
+	
+
+
+### 函数传参
+
+通过这个函数来说明
+
+```Python
+def func(d):
+    print(f"d id is {id(d)}, value is {d}")
+    d['a'] = 10
+    d['b'] = 20 
+    d = {'a': 1, 'b': 2}
+    print(f"d id is {id(d)}, value is {d}")
+
+d = {} # 1
+
+func(d) # 2
+
+print(f"d id is {id(d)}, value is {d}")
+```
+
+
+输出为
+
+> d id is 1995707359168, value is {}
+> d id is 1995707358336, value is {'a': 1, 'b': 2} 
+> d id is 1995707359168, value is {'a': 10, 'b': 20}
+
+如果这里稍微变一下
+
+
+```python
+def func(d):
+    print(f"d id is {id(d)}, value is {d}")
+    d['a'] = 10
+    d['b'] = 20            
+    #d = {'a': 1, 'b': 2}
+    print(f"d id is {id(d)}, value is {d}")
+
+
+d = {}                    # 1
+func(d)                   # 2
+print(f"d id is {id(d)}, value is {d}")
+```
+
+
+d id is 1995707358336, value is {}
+d id is 1995707358336 value is {'a': 10, 'b': 20} 
+d id is 1995707358336, value is {'a': 10, 'b': 20}

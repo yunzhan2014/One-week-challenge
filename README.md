@@ -4,6 +4,8 @@
 
 ## week 1  12月19日-12月25日
 
+
+
 ### Liunx命令
 
 1. 查询某个程序运行的情况
@@ -28,8 +30,5 @@ tail -f **.log | grep **关键词**
 
 ### 学习材料
 
-* [Yaml 官网](https://yaml.org/)
+* [Yaml 官网](https://yamlrg/)
     能看到各种python yaml库，以及yaml新特性更新
-
-* [菜鸟驿站]（）
-
